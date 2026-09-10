@@ -32,7 +32,7 @@
 ### Codex
 
 ```bash
-git clone https://github.com/<you>/lean-agent-skills
+git clone https://github.com/wangxiaohuiboy/lean-agent-skills
 ./lean-agent-skills/scripts/install.sh --target codex
 ```
 

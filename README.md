@@ -32,7 +32,7 @@ Skills work in Codex, Claude Code, and any agent that reads `SKILL.md` files. Ea
 ### Codex
 
 ```bash
-git clone https://github.com/<you>/lean-agent-skills
+git clone https://github.com/wangxiaohuiboy/lean-agent-skills
 ./lean-agent-skills/scripts/install.sh --target codex
 ```
 
