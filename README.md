@@ -6,7 +6,7 @@ Four skills cut the cost of a coding session — less context read, less code wr
 
 Skills work in Codex, Claude Code, and any agent that reads `SKILL.md` files. Each one loads only its short description until it is actually used, so installing all seven costs almost nothing at rest.
 
-[中文说明](README.zh-CN.md)
+[中文说明](README.zh-CN.md) · [中文 skill 文档](docs/zh-CN/README.md)
 
 ## What's inside
 
@@ -26,6 +26,12 @@ Skills work in Codex, Claude Code, and any agent that reads `SKILL.md` files. Ea
 | [`frontend-craft`](skills/frontend-craft) | Locks a design system before composing, lists the anti-patterns that read as machine-generated, and covers states, motion, and the narrow layout. Ships a starter `tokens.css` | Building or restyling a page or component |
 | [`frontend-perf`](skills/frontend-perf) | Measure-first loop over LCP, INP, CLS, and bundle size, with the concrete fixes for each | A page feels slow, a bundle grew, a metric regressed |
 | [`frontend-a11y`](skills/frontend-a11y) | An ordered WCAG 2.2 AA pass: keyboard, semantics, names, focus, forms, contrast, motion, live regions | Shipping UI, reviewing a component, a reported blocker |
+
+## Docs
+
+The `SKILL.md` bodies are English, because that is what the model reads and English is more token-efficient at equal information density. Each skill also has a Chinese explanation written for humans — why it exists, when **not** to use it, and how to adapt it to your team:
+
+**[docs/zh-CN/](docs/zh-CN/README.md)** — one page per skill plus an index.
 
 ## Install
 

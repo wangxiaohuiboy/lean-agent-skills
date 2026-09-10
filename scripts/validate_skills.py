@@ -16,6 +16,8 @@ PLACEHOLDER_RE = re.compile(
     r"\[TODO|Replace this placeholder|Replace with actual|\bFIXME:", re.IGNORECASE
 )
 REFERENCE_RE = re.compile(r"`((?:references|assets|scripts)/[^`\s]+)`")
+LINK_RE = re.compile(r"\[[^\]]*\]\(([^)\s]+)\)")
+EXTERNAL_PREFIXES = ("http://", "https://", "mailto:", "#")
 
 MIN_DESCRIPTION = 40
 MAX_DESCRIPTION = 600
@@ -84,6 +86,26 @@ def check_skill(skill_dir, errors):
         errors.append(f"{name}: agents/openai.yaml is missing")
 
 
+def check_links(errors):
+    """Every relative markdown link in the repo must resolve to something real."""
+    checked = 0
+    for path in sorted(REPO.rglob("*.md")):
+        if ".git" in path.parts:
+            continue
+        for target in LINK_RE.findall(path.read_text(encoding="utf-8")):
+            if target.startswith(EXTERNAL_PREFIXES):
+                continue
+            relative = target.partition("#")[0]
+            if not relative:
+                continue
+            checked += 1
+            if not (path.parent / relative).resolve().exists():
+                errors.append(
+                    f"{path.relative_to(REPO)}: link to {target!r} does not resolve"
+                )
+    return checked
+
+
 def main():
     if not SKILLS.is_dir():
         print(f"no skills directory at {SKILLS}", file=sys.stderr)
@@ -97,6 +119,7 @@ def main():
     errors = []
     for skill_dir in skill_dirs:
         check_skill(skill_dir, errors)
+    link_count = check_links(errors)
 
     if errors:
         for error in errors:
@@ -104,7 +127,7 @@ def main():
         print(f"\n{len(errors)} problem(s) in {len(skill_dirs)} skills", file=sys.stderr)
         return 1
 
-    print(f"all {len(skill_dirs)} skills valid")
+    print(f"all {len(skill_dirs)} skills valid, {link_count} relative links resolve")
     return 0
 
 

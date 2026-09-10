@@ -6,7 +6,7 @@
 
 支持 Codex、Claude Code，以及任何读取 `SKILL.md` 的助手。每个 skill 在没被真正用到之前，只有一行简短描述占用上下文，所以七个全装上，闲着的时候几乎不花 token。
 
-[English](README.md)
+[English](README.md) · [中文 skill 文档](docs/zh-CN/README.md)
 
 ## 内容
 
@@ -26,6 +26,20 @@
 | [`frontend-craft`](skills/frontend-craft) | 先把设计系统定下来再写结构；列出那些「看着就像生成的」反模式；覆盖各种状态、动效、窄屏布局。附一份可直接用的 `tokens.css` | 新建或改造页面 / 组件 |
 | [`frontend-perf`](skills/frontend-perf) | 先测量再动手，围绕 LCP、INP、CLS 和包体积排查，给出每个指标对应的具体修法 | 页面卡、包变大、指标回退 |
 | [`frontend-a11y`](skills/frontend-a11y) | 按优先级排序的 WCAG 2.2 AA 检查：键盘、语义、名称、焦点、表单、对比度、动效、实时区域 | 上线 UI、review 组件、有人反馈用不了 |
+
+## 中文文档
+
+表里的 skill 名点进去是英文正文（`SKILL.md`），那是给模型读的。**给人读的中文说明在 [docs/zh-CN/](docs/zh-CN/README.md)**，每个 skill 一篇，讲的是它为什么这么写、什么情况下**不该**用它、以及怎么改成适合你们团队的版本——不是逐句对照翻译，那种副本一定会过期。
+
+| Skill | 中文文档 |
+| --- | --- |
+| `lean-context` | [用最少的 token 摸清一个代码库](docs/zh-CN/lean-context.md) |
+| `lean-diff` | [七级解法阶梯，先理解再动手](docs/zh-CN/lean-diff.md) |
+| `lean-answer` | [先给答案，砍掉寒暄](docs/zh-CN/lean-answer.md) |
+| `context-handoff` | [把长会话压成可续接的简报](docs/zh-CN/context-handoff.md) |
+| `frontend-craft` | [写结构之前先做设计决策](docs/zh-CN/frontend-craft.md) |
+| `frontend-perf` | [先测量再动手的性能循环](docs/zh-CN/frontend-perf.md) |
+| `frontend-a11y` | [按优先级排好的无障碍检查](docs/zh-CN/frontend-a11y.md) |
 
 ## 安装
 
