@@ -1,0 +1,4 @@
+interface:
+  display_name: "Lean Diff"
+  short_description: "Make the smallest correct change"
+  default_prompt: "Use $lean-diff to solve this with the smallest correct change."

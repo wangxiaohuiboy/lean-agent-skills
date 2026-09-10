@@ -1,0 +1,4 @@
+interface:
+  display_name: "Frontend Craft"
+  short_description: "UI that does not look generated"
+  default_prompt: "Use $frontend-craft to build this interface with deliberate design choices."

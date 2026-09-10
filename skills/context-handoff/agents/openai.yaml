@@ -1,0 +1,4 @@
+interface:
+  display_name: "Context Handoff"
+  short_description: "Write a resumable session brief"
+  default_prompt: "Use $context-handoff to write a brief that the next session can resume from."

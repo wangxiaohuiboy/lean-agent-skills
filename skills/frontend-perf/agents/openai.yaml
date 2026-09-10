@@ -1,0 +1,4 @@
+interface:
+  display_name: "Frontend Perf"
+  short_description: "Measure-first web performance"
+  default_prompt: "Use $frontend-perf to find and fix the real performance bottleneck."

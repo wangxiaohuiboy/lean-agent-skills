@@ -1,0 +1,4 @@
+interface:
+  display_name: "Lean Context"
+  short_description: "Read less, find it faster"
+  default_prompt: "Use $lean-context to explore this codebase with the fewest tokens."

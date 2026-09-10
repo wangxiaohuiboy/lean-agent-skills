@@ -1,0 +1,4 @@
+interface:
+  display_name: "Frontend A11y"
+  short_description: "WCAG AA accessibility audit and fixes"
+  default_prompt: "Use $frontend-a11y to audit and fix accessibility issues in this UI."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Lean Answer"
+  short_description: "Dense, low-token written replies"
+  default_prompt: "Use $lean-answer to reply in as few tokens as still answer the question."
